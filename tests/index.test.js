@@ -40,7 +40,7 @@ describe("Food class", () => {
     expect(console.log).toHaveBeenCalledWith("Banana is being prepared");
   });
 
-  test("Banana has isFresh method", () => {
+  test("Food has isFresh method", () => {
     expect(typeof banana.isFresh).toBe("function");
     expect(banana.isFresh).toBeTruthy();
   });
@@ -132,17 +132,22 @@ describe("Tamagotchi Class", () => {
   });
 
   test("eat method increases fullness by 2", () => {
-    expect(typeof fizz.eat).toBe("function");
-    expect(fizz.eat).toBeTruthy();
-  });
-
-  test("eat method increases fullness by 2", () => {
     fizz.eat();
     expect(fizz.full).toBe(10);
     expect(fizz.sick).toBe(false);
   });
 
+  test("eat method decreases energy by 1", () => {
+    fizz.full = 6;
+    fizz.energy = 4;
+    fizz.eat();
+    expect(fizz.energy).toBe(3);
+    expect(fizz.sick).toBe(false);
+  });
+
   test("if eat method makes fullness more than 10, tamagotchi becomes sick", () => {
+    fizz.full = 10;
+    fizz.energy = 4;
     fizz.eat();
     expect(fizz.full).toBe(12);
     expect(fizz.sick).toBe(true);
@@ -154,6 +159,8 @@ describe("Tamagotchi Class", () => {
   });
 
   test("Tamagotchi medicate heals sick tamagotchi", () => {
+    fizz.full = 12;
+    fizz.energy = 4;
     fizz.sick = true;
     fizz.medicate();
     expect(fizz.sick).toBe(false);
@@ -190,10 +197,22 @@ describe("Tamagotchi Class", () => {
     expect(fizz.full).toBe(7);
   });
 
+  test("Tamagotchi won't play if it is sick", () => {
+    fizz.mood = 10;
+    fizz.energy = 6;
+    fizz.full = 8;
+    fizz.sick = true;
+    fizz.play();
+    expect(fizz.mood).toBe(9);
+    expect(fizz.energy).toBe(5);
+    expect(fizz.full).toBe(8);
+  });
+
   test("Tamagotchi won't play if mood is above 9", () => {
     fizz.mood = 10;
     fizz.energy = 6;
     fizz.full = 8;
+    fizz.sick = false;
     fizz.play();
     expect(fizz.mood).toBe(10);
     expect(fizz.energy).toBe(4);
