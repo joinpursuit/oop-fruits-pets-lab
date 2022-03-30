@@ -143,7 +143,7 @@ Some bad foods are going really bad! They no longer want to play nice. They want
   - name: (inherited) string
   - daysToSpoil:(inherited) start with 20 days, these will go down when the food is attacked (think of this like hit points)
   - fresh: boolean (when the food is knocked out (days to spoil is less than or equal to 0), change this property.) This food will have lost the battle if it is no longer fresh
-  - weaponss: an array of 3 objects that have hit points of 3, 4 an 5
+  - weapons: an array of 3 objects that have hit points of 3, 4 an 5
 - Methods
   - isFresh: (inherited) - use this to check the status of your bad food
   - prepare: overwrite this method so that instead it console logs a fight preparation method by taunting the other food `I am <name> and my calories are too high to count!` or `I am <name> and you are just a passing trend!`
@@ -178,7 +178,7 @@ Sample fight array for a pizza
     hitPoints: 3,
   },
   {
-    name: "Hot Pepper Bottle Throw",
+    name: "Hot Pepper Storm",
     hitPoints: 4,
   },
   {
@@ -190,9 +190,9 @@ Sample fight array for a pizza
 
 Test your Bad Foods by:
 
-- creating two instances
-- have each one `prepare`
-- have each one `fight` once
+- Creating two instances
+- Have each one `prepare`
+- Have each one `fight` once
 
 #### Super Bonus
 
