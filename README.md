@@ -140,14 +140,14 @@ Some bad foods are going really bad! They no longer want to play nice. They want
 - Create a new class `BadFood` that inherits from the `Food` class
 
 - Attributes
-- name: (inherited) string
-- daysToSpoil:(inherited) start with 20 days, these will go down when the food is attacked (think of this like hit points)
-- fresh: boolean (when the food is knocked out (days to spoil is less than or equal to 0), change this property.) This food will have lost the battle if it is no longer fresh
-- fight: an array of 3 objects that have hit points of 3, 4 an 5
+  - name: (inherited) string
+  - daysToSpoil:(inherited) start with 20 days, these will go down when the food is attacked (think of this like hit points)
+  - fresh: boolean (when the food is knocked out (days to spoil is less than or equal to 0), change this property.) This food will have lost the battle if it is no longer fresh
+  - weaponss: an array of 3 objects that have hit points of 3, 4 an 5
 - Methods
-- isFresh: (inherited) - use this to check the status of your bad food
-- prepare: overwrite this method so that instead it console logs a fight preparation method by taunting the other food `I am <name> and my calories are too high to count!` or `I am <name> and you are just a passing trend!`
-- fight: takes in an instance of a `BadFood`, selects a random fight method and decreases the hit points by the number from the selected fight method. Finally, console logs a message with both `daysToSpoil` properties
+  - isFresh: (inherited) - use this to check the status of your bad food
+  - prepare: overwrite this method so that instead it console logs a fight preparation method by taunting the other food `I am <name> and my calories are too high to count!` or `I am <name> and you are just a passing trend!`
+  - fight: takes in an instance of a `BadFood`, selects a random fight method and decreases the hit points by the number from the selected fight method. Finally, console logs a message with both `daysToSpoil` properties
   `<pizza> is down <pizza.daysToSpoil> , but I am still up <donut.daysToSpoil> !`
 
 Sample fight array for a donut
@@ -192,7 +192,7 @@ Test your Bad Foods by:
 
 - creating two instances
 - have each one `prepare`
-- have ach one `fight` once
+- have each one `fight` once
 
 #### Super Bonus
 
