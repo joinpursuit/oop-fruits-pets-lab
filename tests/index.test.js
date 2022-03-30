@@ -68,7 +68,6 @@ describe("Food class", () => {
   });
 
   test("aDayPasses decreases number of days to spoil", () => {
-    banana.isFresh = jest.fn();
     banana.aDayPasses();
     expect(banana.daysToSpoil).toBe(2);
   });
