@@ -36,20 +36,6 @@ npm run watch
 
 Follow the on-screen prompts to exit out of the constant runner.
 
-### Run test files individually
-
-There are a lot of tests that are contained in this project. You can run a single test file individually by putting the name of the file after `npm test`. You can even only put part of the file name.
-
-```
-npm test facts
-```
-
-Keep in mind that the testing framework, Jest, will attempt to match as many files as possible. So, for example, the following command will run all of the tests because all of the tests are inside of the `dinosaur-museum-project/` folder.
-
-```
-npm test dinosaur
-```
-
 ### Run tests individually
 
 _After choosing a specific file to run,_ you can also specific which test you want to run, specifically. Add `.only` after either `test` or `describe` for the specific test you'd like to run.
@@ -67,7 +53,7 @@ This will either run the specific `test` or, in the case of adding `.only` to a 
 If you want to manually test out your file, you can do so by running the following command.
 
 ```
-node index.js
+node [filename]
 ```
 
 The output will be printed to your terminal.
@@ -112,7 +98,7 @@ Create a virtual pet that can play, eat, sleep and more! Try to keep your pet ha
 - Methods
 
   - greet: Tamagotchi console logs `Hello, I'm <name>!`
-  - status: Tamogotch console logs energy, full, mood, and sick values (see below for sample message)
+  - status: Tamogotchi console logs energy, full, mood, and sick values (see below for sample message)
   - eat: increases fullness by two, decreases energy by 1,
     - if eat method makes fullness more than 10, tamagotchi becomes sick (sick = true)
 
@@ -124,7 +110,7 @@ Create a virtual pet that can play, eat, sleep and more! Try to keep your pet ha
 - play: increases mood by 2, reduces energy and full by 1,
   - will not play if tamagotchi is sick,
   - if asked to play when sick, reduce mood and energy by 1
-  - will not play if mood is above 9, reduce energy by 2 and energy by 1
+  - will not play if mood is above 9, reduce energy by 2 and full by 1
   - will not play if energy is less than or equal to 3
     - console log "I am too tired to play" - reduce energy by 1
 - sleep:
