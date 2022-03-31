@@ -47,7 +47,11 @@ class Tamagotchi {
 		}
 	}
 	play() {
-		if (this.modd > 9) {
+		if (this.sick === true) {
+			this.mood--;
+			this.energy--;
+			console.log("I am too tired too play");
+		} else if (this.mood > 9) {
 			this.energy = this.energy - 2;
 			console.log("I am too tired too play");
 			this.full--;
@@ -55,32 +59,29 @@ class Tamagotchi {
 			console.log("I am too tired too play");
 			this.energy--;
 		} else {
-			if (this.sick === true) {
-				this.mood--;
-				this.energy--;
-				console.log("I am too tired too play");
-			} else {
-				this.modd = this.mood + 2;
-				this.energy--;
-				this.full--;
-			}
+			this.mood = this.mood + 2;
+			this.energy--;
+			this.full--;
 		}
 	}
+
 	sleep() {
-		this.energy + 4;
-		this.full - 3;
+		this.energy = this.energy + 4;
+		this.full = this.full - 3;
 	}
+
 	timePasses() {
 		if (this.sick === false) {
-			this.mood - 2;
+			this.mood = this.mood - 2;
 			this.full--;
 			this.energy--;
 		} else {
-			this.modd - 3;
-			this.full - 2;
-			this.energy - 2;
+			this.mood = this.mood - 3;
+			this.full = this.full - 2;
+			this.energy = this.energy - 2;
 		}
 	}
+
 	badGuardian() {
 		console.log(`${this.name} has been rehomed`);
 		if (this.energy <= 0 || this.mood <= 0 || this.full <= 0) {
