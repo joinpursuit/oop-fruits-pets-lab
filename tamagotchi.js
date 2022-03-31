@@ -32,6 +32,7 @@ class Tamagotchi{
         } else{
             console.log("Not Sick")
         }
+        this.energy -= 3
     }
 }
 // Do not edit below this line
