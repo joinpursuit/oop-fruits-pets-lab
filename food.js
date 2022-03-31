@@ -1,5 +1,11 @@
 // Create class below
 class Food{
+    constructor(name, daysToSpoil, isFresh = true){
+        this.name = name
+        this.daysToSpoil = daysToSpoil
+        this.fresh = isFresh
+    }
+
     
 }
 
