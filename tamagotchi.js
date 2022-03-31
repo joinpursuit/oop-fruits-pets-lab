@@ -8,6 +8,10 @@ class Tamagotchi{
         this.sick = sick
         this.rehomed  = rehomed
     }
+
+    greet(){
+        
+    }
 }
 // Do not edit below this line
 module.exports = Tamagotchi;
