@@ -35,6 +35,10 @@ class Tamagotchi{
             console.log("Not Sick")
         }
     }
+
+    play(){
+        
+    }
 }
 // Do not edit below this line
 module.exports = Tamagotchi;
