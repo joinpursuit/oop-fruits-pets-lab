@@ -10,6 +10,10 @@ class Tamagotchi{
     }
 
     greet(){
+
+    }
+
+    status(){
         
     }
 }
