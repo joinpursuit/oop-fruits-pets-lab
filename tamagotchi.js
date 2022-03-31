@@ -26,7 +26,12 @@ class Tamagotchi{
     }
 
     medicate(){
-        
+        if(this.sick){
+            this.full = 9
+            this.sick = false
+        } else{
+            console.log("Not Sick")
+        }
     }
 }
 // Do not edit below this line
