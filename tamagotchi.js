@@ -24,6 +24,10 @@ class Tamagotchi{
            this.sick = true
        }
     }
+
+    medicate(){
+        
+    }
 }
 // Do not edit below this line
 module.exports = Tamagotchi;
