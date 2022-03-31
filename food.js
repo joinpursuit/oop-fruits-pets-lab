@@ -1,5 +1,3 @@
-const e = require("cors");
-
 // Create class below
 class Food {
   constructor(name, daysToSpoil, fresh = true) {
