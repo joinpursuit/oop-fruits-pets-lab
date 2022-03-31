@@ -278,7 +278,7 @@ describe("Tamagotchi Class", () => {
     fizz.energy = 0;
     fizz.mood = 9;
     fizz.full = 9;
-    fizz.badGuardian();
+    fizz.status();
     expect(fizz.rehomed).toBe(true);
   });
 
@@ -286,7 +286,7 @@ describe("Tamagotchi Class", () => {
     fizz.mood = 0;
     fizz.energy = 9;
     fizz.full = 9;
-    fizz.badGuardian();
+    fizz.status();
     expect(fizz.rehomed).toBe(true);
   });
 
@@ -294,7 +294,7 @@ describe("Tamagotchi Class", () => {
     fizz.mood = 9;
     fizz.energy = 9;
     fizz.full = 0;
-    fizz.badGuardian();
+    fizz.status();
     expect(fizz.rehomed).toBe(true);
   });
 });
