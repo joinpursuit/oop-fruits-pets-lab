@@ -18,6 +18,10 @@ class Food{
         }
     }
 
+    aDayPasses(){
+        
+    }
+
 }
 
 // Do not edit below this line
