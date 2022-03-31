@@ -1,12 +1,15 @@
 // Create class below
 class Food{
-    constructor(name, daysToSpoil, isFresh = true){
+    constructor(name, daysToSpoil, fresh = true){
         this.name = name
         this.daysToSpoil = daysToSpoil
-        this.fresh = isFresh
+        this.fresh = fresh
     }
 
-    
+    prepare(){
+        console.log("Banana is being prepared")
+    }
+
 }
 
 // Do not edit below this line
