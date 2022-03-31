@@ -16,6 +16,10 @@ class Tamagotchi{
     status(){
         
     }
+
+    eat(){
+        
+    }
 }
 // Do not edit below this line
 module.exports = Tamagotchi;
