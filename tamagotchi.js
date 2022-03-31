@@ -29,10 +29,11 @@ class Tamagotchi{
         if(this.sick){
             this.full = 9
             this.sick = false
+            this.energy -= 3
         } else{
+            this.energy -= 1
             console.log("Not Sick")
         }
-        this.energy -= 3
     }
 }
 // Do not edit below this line
