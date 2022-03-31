@@ -21,6 +21,20 @@ class Food{
     }
 
 }
+class BadFood extends Food{
+    constructor(name, daysToSpoil, fresh, weapons){
+        super(name, daysToSpoil, fresh, weapons);
+        this.daysToSpoil = 20;
+        this.weapons = [3,4,5]
+       
+    }
+    isFresh(){
+        if(daysToSpoil<= 0){
+            this.fresh= false
+        }
+    }
+    prepare()
+}
 
 // Do not edit below this line
 module.exports = Food;

@@ -32,12 +32,6 @@ class Tamagotchi{
             this.energy--
         }
     }
-// play: increases mood by 2, reduces energy and full by 1,
-// will not play if tamagotchi is sick,
-// if asked to play when sick, reduce mood and energy by 1
-// will not play if mood is above 9, reduce energy by 2 and full by 1
-// will not play if energy is less than or equal to 3
-// console log "I am too tired to play" - reduce energy by 1
 
     play(){
         if(this.sick){
@@ -47,7 +41,7 @@ class Tamagotchi{
         }else if(this.mood > 9){
             this.energy -= 2;
             this.full--;
-        } else if(this.energy <= 3){
+        }else if(this.energy <= 3){
             console.log(`I am too tired to play`);
             this.energy--;
         }else{
