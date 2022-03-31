@@ -18,7 +18,7 @@ class Tamagotchi{
     }
 
     eat(){
-        
+       this.full += 2 
     }
 }
 // Do not edit below this line
