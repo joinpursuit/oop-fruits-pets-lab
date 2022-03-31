@@ -10,6 +10,9 @@ class Food{
         console.log("Banana is being prepared")
     }
 
+    isFresh(){
+    }
+
 }
 
 // Do not edit below this line
