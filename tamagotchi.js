@@ -43,8 +43,6 @@ class Tamagotchi {
   }
   // increases mood by 2, reduces energy and full by 1
   play() {
-    //won't play if sick
-
     //if asked to play when sick, reduce mood and energy by 1
     if (this.sick) {
       this.mood--;
