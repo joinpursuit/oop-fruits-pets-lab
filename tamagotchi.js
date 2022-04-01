@@ -41,7 +41,7 @@ class Tamagotchi {
       this.energy--;
     }
   }
-  // increases mood by 2, reduces energy and full by 1
+
   play() {
     //if asked to play when sick, reduce mood and energy by 1
     if (this.sick) {
@@ -55,11 +55,34 @@ class Tamagotchi {
     } else if (this.energy <= 3) {
       console.log("I am too tired to play");
       this.energy--;
-    } else {
+    } // increases mood by 2, reduces energy and full by 1
+    else {
       this.mood += 2;
       this.energy--;
       this.full--;
     }
+  }
+  sleep() {
+    this.energy += 4;
+    this.full -= 3;
+  }
+  timePasses() {
+    if (!this.sick) {
+      this.mood -= 2;
+      this.full--;
+      this.energy--;
+    } else {
+      this.mood -= 3;
+      this.full -= 2;
+      this.energy -= 2;
+    }
+  }
+  //the tamagotchi has been rehomed
+
+  badGuardian() {
+    console.log(`${this.name} has been rehomed`);
+    if (this.energy <= 0 || this.mood <= 0 || this.full <= 0)
+      this.rehomed = true;
   }
 }
 
