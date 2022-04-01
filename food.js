@@ -24,7 +24,7 @@ class Food{
     };
 };
 
-const chicken = new Food("Chicken", 0);
+const chicken = new Food("Chicken", 1);
 chicken.prepare(chicken.name);
 chicken.isFresh(chicken.name, chicken.daysToSpoil);
 chicken.aDayPasses(chicken.name, chicken.daysToSpoil);

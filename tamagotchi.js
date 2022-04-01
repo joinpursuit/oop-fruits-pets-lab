@@ -22,7 +22,14 @@ class Tamagotchi{
         };
     };
     medicate(){
-
+        if(this.sick){
+            this.full = 9;
+            this.energy -= 3;
+            this.sick = false;
+        } else{
+            this.energy -= 1;
+            console.log("Tamagotchi refuses to take medicine, I'm not sick!");
+        };
     };
     play(){
 
@@ -43,7 +50,9 @@ class Tamagotchi{
 
 
     
-}
+};
+
+
 
 // Do not edit below this line
 module.exports = Tamagotchi;
