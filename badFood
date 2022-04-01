@@ -1,0 +1,49 @@
+const Food = require("./food.js");
+
+// Create a new class BadFood that inherits from the Food class
+class BadFood extends Food{
+    constructor(name, daysToSpoil = 20, fresh, weapons){
+    // Attributes
+        super(name, daysToSpoil, fresh)
+        this.weapons = weapons || [
+            {
+              name: "Mouth Burn",
+              hitPoints: 3,
+            },
+            {
+              name: "Hot Pepper Storm",
+              hitPoints: 4,
+            },
+            {
+              name: "Cheese Grease",
+              hitPoints: 5,
+            },
+          ];
+    }
+    // Methods
+    isFresh() {
+        super.isFresh();
+        // if(daysToSpoil<=0) {
+        //     this.fresh = false;
+        //     //This food will have lost the battle if it is no longer fresh
+        // }
+    }
+
+    prepare(){
+        console.log(`I am ${this.name} and my calories are too high to count! or I am ${this.name} and you are just a passing trend!`)
+    }
+
+    // fight: takes in an instance of a BadFood, 
+    // selects a random fight method and decreases the hit points by the number from the selected fight method. 
+    // Finally, console logs a message with both daysToSpoil properties <pizza> is down <pizza.daysToSpoil> , 
+    // but I am still up <donut.daysToSpoil> !
+    // fight(){
+        // daysToSpoil -- go down when the food is attacked (think of this like hit points)
+    // }
+}
+
+
+const new1BadFood = new BadFood("new-name-one")
+new1BadFood.prepare();
+const new2BadFood = new BadFood("new-name-two")
+// new2BadFood.fight();
