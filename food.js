@@ -12,11 +12,11 @@ class Food {
 
   isFresh() {
     if (this.daysToSpoil >= 1) {
-      console.log(
+     console.log(
         `There are ${this.daysToSpoil} days left before ${this.name} spoils.`
       );
     } else {
-      console.log(`${this.name} has spoiled.`);
+     console.log(`${this.name} has spoiled.`);
     }
   }
 
@@ -28,40 +28,60 @@ const Banana = new Food("banana", 3, false);
 Banana.isFresh();
 
 class BadFood extends Food {
-  constructor(name, daysToSpoil = 20, edible = true, weapons) {
+  constructor(name, daysToSpoil = 20, fresh = true, weapons = []) {
     super(name, daysToSpoil);
-    this.edible = edible;
-    this.weapons = weapons || [3, 4, 5];
+    this.fresh = fresh;
+    this.weapons = weapons 
   }
  
   isFresh() {
-    if (this.edible && this.daysToSpoil > 1) {
-      console.log(
-        `${this.name} has ${this.daysToSpoil} days left to spoil, you can eat it `
-      );
-    } else if ( this.daysToSpoil === 1) {
-      console.log(
-        `${this.name} has ${this.daysToSpoil} day left to spoil, you cannot eat it `
-      );
-    }
-  
+   return super.isFresh()
   }
  
-  //    or `I am <name> and you are just a passing trend!`
   prepare() {
     
-      const {weapons, name } = this
-      const amunitions = weapons.map(num => num).reduce((a, b ) => a += b, 0)
-      if(amunitions > 20){
-          console.log(`I am ${name} and my calories are too high to count!`);
+      const { name } = this
+      console.log(`I am ${name} and my calories are too high to count!`);
 
-      }
+  }
+
+  fight(badFood){
+
   }
 }
 
-const badFood = new BadFood('Pizza', 1, false);
-badFood.isFresh();
-badFood. prepare();
-
+// name, daysToSpoil = 20, fresh = true, weapons = []
+const donut = new BadFood('Pizza', 6, false, [
+    {
+      name: "Sprinkle Spray",
+      hitPoints: 3,
+    },
+    {
+      name: "Icing Deluge",
+      hitPoints: 4,
+    },
+    {
+      name: "Sugar Shock",
+      hitPoints: 5,
+    },
+  ]);
+const pizza = new BadFood('Pizza', 20, false, [
+    {
+      name: "Mouth Burn",
+      hitPoints: 3,
+    },
+    {
+      name: "Hot Pepper Storm",
+      hitPoints: 4,
+    },
+    {
+      name: "Cheese Grease",
+      hitPoints: 5,
+    },
+  ]);
+donut.isFresh();
+donut.prepare();
+// donut.fight(pizza)
+pizza.fight(donut)
 // Do not edit below this line
 module.exports = Food;
