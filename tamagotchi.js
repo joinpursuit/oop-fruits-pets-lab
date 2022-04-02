@@ -48,10 +48,19 @@ class Tamagotchi{
         };
     };
     sleep(){
-
+        this.energy += 4;
+        this.full -= 3;
     };
     timePasses(){
-
+        if(!this.sick){
+            this.mood -= 2;
+            this.full -= 1;
+            this.energy -= 1;
+        } else{
+            this.mood -= 3;
+            this.full -= 2;
+            this.energy -= 2;
+        };
     };
     badGuardian(){
 
