@@ -32,25 +32,51 @@ class Tamagotchi {
   }
 
   medicate() {
-    this.sick = false;
-
-    if (!this.sick) {
+    if (this.sick) {
       this.full = 9;
       this.energy -= 3;
-    } else if (this.sick) {
-      this.energy -= 1;
+      this.sick = false;
+    } else {
       console.log("Refusal to take medicine");
+      this.energy -= 1;
     }
+
+    // this.sick = false;
+
+    // if (!this.sick) {
+    //   this.full = 9;
+    //   this.energy -= 3;
+    // } else if (this.sick) {
+    //   this.energy -= 1;
+    //   console.log("Refusal to take medicine");
+    // }
   }
 
   play() {
+    // this.mood += 2;
+    // this.energy -= 1;
+    // this.full -= 1;
+
+    if (this.sick) {
+      this.mood -= 1;
+      this.energy -= 1;
+    }
+
+    if (this.mood > 9) {
+      this.energy -= 2;
+      this.full -= 1;
+      return;
+    }
+
+    if (this.energy <= 3) {
+      this.energy -= 1;
+      console.log("I am too tired to play");
+      return;
+    }
+
     this.mood += 2;
     this.energy -= 1;
     this.full -= 1;
-
-    // if (this.sick === true) {
-
-    // }
   }
 
   sleep() {
