@@ -72,6 +72,10 @@ node index.js
 
 The output will be printed to your terminal.
 
+## Include Descriptive Commit Messages Often
+
+![](./assets/commit-mesage-example.png)
+
 ## Instructions
 
 ### Food
