@@ -53,7 +53,7 @@ describe("Food class", () => {
     );
   });
 
-  test("isFresh logs days left when food is fresh", () => {
+  test("isFresh logs days left when food is not fresh", () => {
     const grossBanana = new Food("eeewww what an old banana", -1);
     console.log = jest.fn();
     grossBanana.isFresh();
