@@ -36,20 +36,6 @@ npm run watch
 
 Follow the on-screen prompts to exit out of the constant runner.
 
-### Run test files individually
-
-There are a lot of tests that are contained in this project. You can run a single test file individually by putting the name of the file after `npm test`. You can even only put part of the file name.
-
-```
-npm test facts
-```
-
-Keep in mind that the testing framework, Jest, will attempt to match as many files as possible. So, for example, the following command will run all of the tests because all of the tests are inside of the `dinosaur-museum-project/` folder.
-
-```
-npm test dinosaur
-```
-
 ### Run tests individually
 
 _After choosing a specific file to run,_ you can also specific which test you want to run, specifically. Add `.only` after either `test` or `describe` for the specific test you'd like to run.
@@ -67,7 +53,7 @@ This will either run the specific `test` or, in the case of adding `.only` to a 
 If you want to manually test out your file, you can do so by running the following command.
 
 ```
-node index.js
+node [filename]
 ```
 
 The output will be printed to your terminal.
@@ -116,7 +102,7 @@ Create a virtual pet that can play, eat, sleep and more! Try to keep your pet ha
 - Methods
 
   - greet: Tamagotchi console logs `Hello, I'm <name>!`
-  - status: Tamogotch console logs energy, full, mood, and sick values (see below for sample message)
+  - status: Tamogotchi console logs energy, full, mood, and sick values (see below for sample message)
   - eat: increases fullness by two, decreases energy by 1,
     - if eat method makes fullness more than 10, tamagotchi becomes sick (sick = true)
 
@@ -128,7 +114,7 @@ Create a virtual pet that can play, eat, sleep and more! Try to keep your pet ha
 - play: increases mood by 2, reduces energy and full by 1,
   - will not play if tamagotchi is sick,
   - if asked to play when sick, reduce mood and energy by 1
-  - will not play if mood is above 9, reduce energy by 2 and energy by 1
+  - will not play if mood is above 9, reduce energy by 2 and full by 1
   - will not play if energy is less than or equal to 3
     - console log "I am too tired to play" - reduce energy by 1
 - sleep:
@@ -158,14 +144,14 @@ Some bad foods are going really bad! They no longer want to play nice. They want
 - Create a new class `BadFood` that inherits from the `Food` class
 
 - Attributes
-- name: (inherited) string
-- daysToSpoil:(inherited) start with 20 days, these will go down when the food is attacked (think of this like hit points)
-- fresh: boolean (when the food is knocked out (days to spoil is less than or equal to 0), change this property.) This food will have lost the battle if it is no longer fresh
-- fight: an array of 3 objects that have hit points of 3, 4 an 5
+  - name: (inherited) string
+  - daysToSpoil:(inherited) start with 20 days, these will go down when the food is attacked (think of this like hit points)
+  - fresh: boolean (when the food is knocked out (days to spoil is less than or equal to 0), change this property.) This food will have lost the battle if it is no longer fresh
+  - weapons: an array of 3 objects that have hit points of 3, 4 an 5
 - Methods
-- isFresh: (inherited) - use this to check the status of your bad food
-- prepare: overwrite this method so that instead it console logs a fight preparation method by taunting the other food `I am <name> and my calories are too high to count!` or `I am <name> and you are just a passing trend!`
-- fight: takes in an instance of a `BadFood`, selects a random fight method and decreases the hit points by the number from the selected fight method. Finally, console logs a message with both `daysToSpoil` properties
+  - isFresh: (inherited) - use this to check the status of your bad food
+  - prepare: overwrite this method so that instead it console logs a fight preparation method by taunting the other food `I am <name> and my calories are too high to count!` or `I am <name> and you are just a passing trend!`
+  - fight: takes in an instance of a `BadFood`, selects a random fight method and decreases the hit points by the number from the selected fight method. Finally, console logs a message with both `daysToSpoil` properties
   `<pizza> is down <pizza.daysToSpoil> , but I am still up <donut.daysToSpoil> !`
 
 Sample fight array for a donut
@@ -196,7 +182,7 @@ Sample fight array for a pizza
     hitPoints: 3,
   },
   {
-    name: "Hot Pepper Bottle Throw",
+    name: "Hot Pepper Storm",
     hitPoints: 4,
   },
   {
@@ -208,9 +194,9 @@ Sample fight array for a pizza
 
 Test your Bad Foods by:
 
-- creating two instances
-- have each one `prepare`
-- have ach one `fight` once
+- Creating two instances
+- Have each one `prepare`
+- Have each one `fight` once
 
 #### Super Bonus
 

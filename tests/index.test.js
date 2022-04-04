@@ -68,7 +68,6 @@ describe("Food class", () => {
   });
 
   test("aDayPasses decreases number of days to spoil", () => {
-    banana.isFresh = jest.fn();
     banana.aDayPasses();
     expect(banana.daysToSpoil).toBe(2);
   });
@@ -279,7 +278,7 @@ describe("Tamagotchi Class", () => {
     fizz.energy = 0;
     fizz.mood = 9;
     fizz.full = 9;
-    fizz.status();
+    fizz.badGuardian();
     expect(fizz.rehomed).toBe(true);
   });
 
@@ -287,7 +286,7 @@ describe("Tamagotchi Class", () => {
     fizz.mood = 0;
     fizz.energy = 9;
     fizz.full = 9;
-    fizz.status();
+    fizz.badGuardian();
     expect(fizz.rehomed).toBe(true);
   });
 
@@ -295,7 +294,7 @@ describe("Tamagotchi Class", () => {
     fizz.mood = 9;
     fizz.energy = 9;
     fizz.full = 0;
-    fizz.status();
+    fizz.badGuardian();
     expect(fizz.rehomed).toBe(true);
   });
 });
