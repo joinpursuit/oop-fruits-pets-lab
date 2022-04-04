@@ -12,7 +12,7 @@ class Tamagotchi{
         return `Hello, I'm ${name}!`;
     };
     status(){
-        console.log(`My mood is: ${this.mood}\n I am this full: ${this.full}\n My energy is: ${this.energy}\n I am ${this.sick ? 'sick': 'not sick'}`);
+        console.log(`My mood is: ${this.mood}\nI am this full: ${this.full}\nMy energy is: ${this.energy}\nI am ${this.sick ? 'sick': 'not sick'}`);
     };
     eat(){
         this.full += 2;
@@ -63,16 +63,31 @@ class Tamagotchi{
         };
     };
     badGuardian(){
-
-    };
-
-
-
-
-
-
-    
+        if(this.energy <= 0){
+            this.rehomed = true;
+        } else if(this.mood <= 0){
+            this.rehomed = true;
+        } else if(this.full <= 0){
+            this.rehomed = true;
+        };
+        console.log("Bad Guardian! Your Tamagotchi has been rehomed!");
+    };    
 };
+
+const simba = new Tamagotchi("Simba");
+
+simba.greet(simba.name);
+simba.status();
+simba.eat();
+simba.medicate();
+simba.play();
+simba.sleep();
+simba.timePasses();
+simba.badGuardian();
+
+
+
+
 
 
 
