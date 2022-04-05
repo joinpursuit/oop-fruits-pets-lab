@@ -152,7 +152,7 @@ Some bad foods are going really bad! They no longer want to play nice. They want
   - isFresh: (inherited) - use this to check the status of your bad food
   - prepare: overwrite this method so that instead it console logs a fight preparation method by taunting the other food `I am <name> and my calories are too high to count!` or `I am <name> and you are just a passing trend!`
   - fight: takes in an instance of a `BadFood`, selects a random fight method and decreases the hit points by the number from the selected fight method. Finally, console logs a message with both `daysToSpoil` properties
-  `<pizza> is down <pizza.daysToSpoil> , but I am still up <donut.daysToSpoil> !`
+    `<pizza> is down <pizza.daysToSpoil> , but I am still up <donut.daysToSpoil> !`
 
 Sample fight array for a donut
 
