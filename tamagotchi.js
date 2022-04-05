@@ -21,7 +21,7 @@ status(){
 }
 
 eat(){
-    this.full + 2, 
+    this.full += 2, 
     this.energy--
 
     if(this.full > 10){
@@ -31,26 +31,59 @@ eat(){
 
 medicate(){
     if(this.sick === true){
-        this.full = 9
-        this.energy - 3
+        // this.full += 9;
+        // this.energy -= 3;
     }else{
-        console.log(`${this.name} refuses to take medicine`)
-        this.energy--
+        console.log(`${this.name} refuses to take medicine`);
+        this.energy--;
     }
 }
 
 play(){
+    this.energy--;
+    this.full--;
+    this.mood += 2;
+    if(this.sick === true){
+        //do not play if sick
+    }
+    else if(this.mood >= 9){
+//if mood is greater than or equal to 9, don't play
+    }
+    else if(this.energy >= 3){
+
+    }//if energy is greater than or equal to 3 don't play
+    
+}
+
+sleep(){
+    this.energy += 4;
+    this.full -= 3;
+}
+
+timePasses(){
+    if(this.sick === false){
+        this.mood -= 2;
+        this.full--;
+        this.energy--;
+    }
+    if(this.sick === true){
+        this.mood -= 3;
+        this.full -= 2;
+        this.energy -= 2;
+    }
+}
+
+    badGuardian(){
+        if(this.energy <= 0){
+            this.rehomed = true;
+        }
+        else if (this.mood && this.full <= 0){
+            this.rehomed = true;
+        }
+    }
 
 }
 
 
-
-
-
-
-
-
-
-}
 // Do not edit below this line
 module.exports = Tamagotchi;
