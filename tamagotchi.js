@@ -1,6 +1,6 @@
 // Create class below
 
-class tamagotchi {
+class Tamagotchi {
     constructor(name, energy, full, mood, sick, rehomed){
         this.name = 'string';
         this.energy = 9;
@@ -16,7 +16,7 @@ class tamagotchi {
 
 }
 
-const tuki = new tamagotchi(tuki, 100, 7, 6, false, false);
+const tuki = new Tamagotchi('triki', 100, 7, 6, false, false);
 console.log(tuki)
 // Do not edit below this line
 module.exports = Tamagotchi;
