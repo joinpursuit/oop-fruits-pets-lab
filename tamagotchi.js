@@ -22,7 +22,14 @@ class Tamagotchi {
     };
   };
   medicate(){
-    
+    if(this.sick){
+      this.sick = false;
+      this.full = 9;
+      this.energy -= 3;
+    } else {
+      console.log('refusal to take medicine')
+      this.energy--;
+    }
   };
   play(){
 
