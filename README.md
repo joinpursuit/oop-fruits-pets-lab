@@ -159,7 +159,7 @@ Sample fight array for a donut
 ```js
 [
   {
-    name: "Sprinkle Spray",
+    name: "SprinkleS pray",
     hitPoints: 3,
   },
   {
