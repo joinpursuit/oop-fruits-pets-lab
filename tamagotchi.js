@@ -33,10 +33,8 @@ class Tamagotchi{
     }
     play(){
         if (this.sick){
-            this.mood -= 3;
-            this.energy -= 2;
-            this.full -= 2;
-
+            this.mood -= 1;
+            this.energy -= 1;
         } else if (this.mood > 9) {
             this.energy -= 2;
             this.full -= 1;
@@ -57,7 +55,7 @@ class Tamagotchi{
         if(this.sick){
             this.mood -=3;
             this.full -= 2;
-            this.energy -2; 
+            this.energy -= 2; 
         }else {
             this.mood -= 2;
             this.full -= 1;
