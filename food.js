@@ -25,26 +25,46 @@ class Food {
     console.log(`${this.name} is being prepared`);
   }
 
+  //   isFresh(days) {
+  //     if (days > 0) {
+  //       console.log(
+  //         `There are ${days} days left before this ${this.name} spoils.`
+  //       );
+  //     } else {
+  //       console.log(`eeewww what an old ${this.name} has spoiled.`);
+  //     }
+  //   }
+
   isFresh() {
-    console.log(
-      `There are ${this.daysToSpoil} days left before ${this.name} spoils.`
-    );
+    if (this.daysToSpoil > 0) {
+      console.log(
+        `There are ${this.daysToSpoil} days left before ${this.name} spoils.`
+      );
+    } else {
+      console.log(`${this.name} has spoiled.`);
+    }
+  }
+
+  aDayPasses() {
+    this.daysToSpoil--
+    this.isFresh()
   }
 }
 
 const milk = new Food("milk", 10);
-console.log(milk)
+// console.log(milk)
 const bread = new Food("bread", 5);
 
 milk.prepare();
-bread.prepare()
-console.log(milk.daysToSpoil)
-milk.isFresh()
+bread.prepare();
+console.log(milk.daysToSpoil);
+milk.isFresh(1);
+console.log(milk.fresh);
 
-function add(a, b = 4) {
-    return a + b
+function add(a, b) {
+  return a + b;
 }
-console.log(add(20))
+console.log(add(20, 5));
 
 // Do not edit below this line
 module.exports = Food;
