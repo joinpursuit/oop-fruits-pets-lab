@@ -30,9 +30,9 @@ class Food {
 
 }
 
-const shrimp = new Food("shrimp", 2)
+const shrimp = new Food("shrimp", 1)
+shrimp.aDayPasses()
 console.log(shrimp)
-shrimp.isFresh()
 
 // Do not edit below this line
 module.exports = Food;
