@@ -15,7 +15,7 @@ class Food {
     isFresh() {
         //if days are more than 0 the food is fresh
         if (this.daysToSpoil > 0) {
-            console.log(`There are ${this.daysToSpoil} left before ${this.name} spoils.`)
+            console.log(`There are ${this.daysToSpoil} days left before ${this.name} spoils.`)
         } else {
             console.log(`${this.name} has spoiled`)
         }
@@ -32,7 +32,7 @@ class Food {
 
 const shrimp = new Food("shrimp", 2)
 console.log(shrimp)
-shrimp.prepare()
+shrimp.isFresh()
 
 // Do not edit below this line
 module.exports = Food;
