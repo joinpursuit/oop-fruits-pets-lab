@@ -10,13 +10,16 @@ class Food {
     console.log(`${this.name} is being prepared`);
   }
   isFresh() {
-    if (this.daysToSpoil < 0) {
+    if (this.daysToSpoil === 3) {
       console.log(
         `There are ${this.daysToSpoil} days left before ${this.name} spoils.`
       );
     } else {
-      console.log("eeewww what an old banana has spoiled.");
+      console.log(`eeewww what an old ${this.name} has spoiled.`);
     }
+  }
+  aDayPasses() {
+    --this.daysToSpoil;
   }
 }
 
