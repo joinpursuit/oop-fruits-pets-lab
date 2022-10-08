@@ -1,27 +1,31 @@
 // Create class below
 class Food {
-  constructor(name, fresh = true) {
+  constructor(name, daysToSpoil = 3, fresh = true) {
     this.name = name
-    this.daysToSpoil = 9
+    this.daysToSpoil = daysToSpoil
     this.fresh = fresh
   }
   prepare() {
-    return `${this.name} is being prepared`
+    console.log(`${this.name} is being prepared`)
   }
   isFresh() {
     if (this.daysToSpoil > 0) {
-      return `There are ${this.daysToSpoil} days left before ice cream spoils`
+      console.log(
+        `There are ${this.daysToSpoil} days left before ${this.name} spoils.`
+      )
     } else {
-      return `ice cream has spoiled`
+      console.log(`${this.name} has spoiled.`)
     }
   }
-    aDayPasses() {
-      this.daysToSpoil--
+  aDayPasses() {
+    this.daysToSpoil--
+    this.isFresh()
   }
 }
-let fresh = new Food('apple', true)
+// let fresh = new Food('apple', 39, true)
 // Do not edit below this line
-console.log(fresh.aDayPasses())
-console.log(fresh.isFresh())
-console.log(fresh.prepare())
+// console.log(fresh.aDayPasses())
+// console.log(fresh.isFresh())
+// console.log(fresh.prepare())
+
 module.exports = Food
