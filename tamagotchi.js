@@ -1,12 +1,19 @@
 // Create class below
 class Tamagotchi {
-  constructor(name) {
+  constructor(
+    name,
+    energy = 9,
+    full = 8,
+    mood = 6,
+    sick = false,
+    rehomed = false
+  ) {
     this.name = name;
-    this.energy = 9;
-    this.full = 8;
-    this.mood = 6;
-    this.sick = false;
-    this.rehomed = false;
+    this.energy = energy;
+    this.full = full;
+    this.mood = mood;
+    this.sick = sick;
+    this.rehomed = rehomed;
   }
 
   greet() {
@@ -85,13 +92,7 @@ class Tamagotchi {
   }
 
   badGuardian() {
-    if (this.energy <= 0) {
-      this.rehomed = true;
-    }
-    if (this.mood <= 0) {
-      this.rehomed = true;
-    }
-    if (this.full <= 0) {
+    if (this.energy <= 0 || this.mood <= 0 || this.full <= 0) {
       this.rehomed = true;
     }
     if (this.rehomed) {
