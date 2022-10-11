@@ -23,24 +23,10 @@ class Food {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const mangos = new Food ("mangos",15,true)
+mangos.prepare()
+mangos.isFresh()
+mangos.aDayPasses()
 
 // Do not edit below this line
 module.exports = Food;
