@@ -1,6 +1,7 @@
 // Create class below
 class Food {
   constructor(name, daysToSpoil) {
+    super();
     this.name = name;
     this.daysToSpoil = daysToSpoil;
     this.fresh = this.daysToSpoil >= 1 ? true : false;

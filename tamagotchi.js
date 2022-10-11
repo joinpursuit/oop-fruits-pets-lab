@@ -23,7 +23,7 @@ class Tamagatchi {
     console.log(`****************`);
   }
   eat() {
-    this.full += 3;
+    this.full += 2;
     this.energy--;
     this.full > 10 ? (this.sick = true) : null;
     this.status();
@@ -35,30 +35,36 @@ class Tamagatchi {
   }
   play() {
     if (this.sick) {
-      console.log(`${this.name} doesn't look like playing.`);
+      console.log(`${this.name} doesn't feel like playing.`);
       this.mood--;
       this.energy--;
+      this.status();
     } else if (this.mood > 9) {
       this.mood--;
       this.energy--;
       console.log(`${this.name} seems too wound up to play`);
+      this.status();
     } else if (this.energy <= 3) {
       console.log(`But I am le tired`);
       this.energy--;
+      this.status();
     } else {
       this.mood += 2;
       this.full--;
       this.energy--;
+      this.status();
     }
   }
   sleep() {
     this.energy += 4;
     this.full -= 3;
+    this.status();
   }
   timePasses() {
     !this.sick
       ? ((this.mood -= 2), this.full--, this.energy--)
       : ((this.mood -= 3), (this.full -= 2), (this.energy -= 2));
+      this.status();
   }
   badGuardian() {
     if (this.energy <= 0 || this.mood <= 0 || this.full <= 0) {
@@ -74,6 +80,11 @@ let harold = new Tamagatchi("Harold");
 harold.greet();
 harold.status();
 harold.eat();
+harold.medicate();
+harold.play();
+harold.sleep();
+harold.timePasses();
+harold.badGuardian();
 
 // Do not edit below this line
 module.exports = Tamagatchi;
