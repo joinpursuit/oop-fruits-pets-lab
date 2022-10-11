@@ -36,6 +36,9 @@ class Tamagotchi {
       this.sick = false;
     } else {
       this.energy -= 1;
+      console.log(
+        `I'm ${this.name}, I am not sick, don't give me any medicine.`
+      );
     }
   }
 
@@ -91,10 +94,24 @@ class Tamagotchi {
   badGuardian() {
     if (this.mood <= 0 || this.energy <= 0 || this.full <= 0) {
       this.rehomed = true;
-    } else {
-      console.log(`Tamagotchi has been rehomed.`);
+    }
+    if (this.rehomed === true) {
+      console.log(`${this.name} has been rehomed.`);
     }
   }
 }
+
+//Creating an instance for test case:
+const marutchi = new Tamagotchi('Marutchi', 6, 5, 4, true, true);
+
+marutchi.eat();
+marutchi.play();
+marutchi.sleep();
+marutchi.greet();
+marutchi.status();
+marutchi.medicate();
+marutchi.timePasses();
+marutchi.badGuardian();
+
 // Do not edit below this line
 module.exports = Tamagotchi;
