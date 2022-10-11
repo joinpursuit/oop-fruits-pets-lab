@@ -13,7 +13,19 @@ class Tamagotchi{
         console.log(`Hello, I'm ${this.name}`)
     }
     status(){
-        console.log(`My mood is ${this.mood}, I am this full ${this.full}, my energy is ${this.energy}, I am ${this.sick}`)
+        console.log(`My mood is: ${this.mood}
+        I am this full: ${this.full}
+        My energy is: ${this.energy}
+        I am !${this.sick}`)
+    }
+    eat(){
+        this.full +=2
+        this.energy -=1
+        if(this.full > 10){
+         this.sick === true
+        }else{
+            null
+        }
     }
 }
 
