@@ -1,12 +1,19 @@
 // Create class below
 class Tamagatchi {
-  constructor(name) {
+  constructor(
+    name,
+    energy = 9,
+    full = 8,
+    mood = 6,
+    sick = false,
+    rehomed = false
+  ) {
     this.name = name;
-    this.energy = 9;
-    this.full = 8;
-    this.mood = 6;
-    this.sick = false;
-    this.rehomed = false;
+    this.energy = energy;
+    this.full = full;
+    this.mood = mood;
+    this.sick = sick;
+    this.rehomed = rehomed;
   }
 
   greet() {
@@ -30,7 +37,7 @@ class Tamagatchi {
   }
   medicate() {
     this.sick
-      ? ((this.full = 9), (this.energy -= 3))
+      ? ((this.full = 9), (this.energy -= 3), (this.sick = false))
       : (console.log("No! I feel fine!"), this.energy--);
   }
   play() {
@@ -40,9 +47,9 @@ class Tamagatchi {
       this.energy--;
       this.status();
     } else if (this.mood > 9) {
-      this.mood--;
-      this.energy--;
       console.log(`${this.name} seems too wound up to play`);
+      this.energy -= 2;
+      this.full--;
       this.status();
     } else if (this.energy <= 3) {
       console.log(`But I am le tired`);
@@ -64,7 +71,7 @@ class Tamagatchi {
     !this.sick
       ? ((this.mood -= 2), this.full--, this.energy--)
       : ((this.mood -= 3), (this.full -= 2), (this.energy -= 2));
-      this.status();
+    this.status();
   }
   badGuardian() {
     if (this.energy <= 0 || this.mood <= 0 || this.full <= 0) {

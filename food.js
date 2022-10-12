@@ -1,7 +1,6 @@
 // Create class below
 class Food {
   constructor(name, daysToSpoil) {
-    super();
     this.name = name;
     this.daysToSpoil = daysToSpoil;
     this.fresh = this.daysToSpoil >= 1 ? true : false;
@@ -13,14 +12,21 @@ class Food {
   isFresh() {
     this.fresh
       ? console.log(
-          `There are ${this.daysToSpoil} days left before ${this.name} spoils`
+          `There are ${this.daysToSpoil} days left before ${this.name} spoils.`
         )
-      : console.log(`${this.name} has spoiled`);
+      : console.log(`${this.name} has spoiled.`);
   }
   aDayPasses() {
     this.daysToSpoil -= 1;
     this.daysToSpoil <= 0 ? (this.fresh = false) : null;
     this.isFresh();
+  }
+}
+
+class BadFood extends Food {
+  constructor(name, daysToSpoil, fresh, weapons) {
+    super(name, daysToSpoil, fresh);
+    this.weapons = weapons;
   }
 }
 
