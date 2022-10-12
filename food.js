@@ -18,15 +18,16 @@ class Food {
         
     }
     aDayPasses() {
-        this.daysToSpoil-1;
+        this.daysToSpoil-=1;
+        this.isFresh()
 
     }
 }
 
-const iceCream = new Food("Banana", 3);
-console.log(iceCream.prepare())
-console.log(iceCream.isFresh())
-console.log(iceCream.aDayPasses())
+const iceCream = new Food("IceCream", 3);
+iceCream.prepare()
+iceCream.isFresh()
+iceCream.aDayPasses()
 
 // Do not edit below this line
 module.exports = Food;
