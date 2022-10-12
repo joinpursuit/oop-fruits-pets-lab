@@ -13,13 +13,23 @@ class Tamagotchi {
         console.log(`Hello, I'm ${this.name}!`)
     }
     status() {
-        console.log(`My mood is: ${this.mood}`/n `I am this full: ${this.full}`/n `My energy is: ${this.energy}`/n `I am not sick`);
+        console.log(`My mood is: ${this.mood}. I am this full: ${this.full}. My energy is: ${this.energy}. I am not sick`);
     }
     eat() {
-        this.full += 2;
         this.energy -= 1;
+        this.full += 2;
         if (this.full > 10) {
-            return !this.sick
+            this.sick = true;
+        }
+    }
+    medicate() {
+        if (this.sick) {
+            this.full = 9;
+            this.energy -= 3
+            this.sick = false;
+        } else {
+            console.log("refusal to take medicine");
+            this.energy -= 1;
         }
     }
 }
@@ -27,5 +37,6 @@ const captain = new Tamagotchi("Gozarutchi")
 captain.greet()
 captain.status()
 captain.eat()
+captain.medicate()
 // Do not edit below this line
 module.exports = Tamagotchi;
