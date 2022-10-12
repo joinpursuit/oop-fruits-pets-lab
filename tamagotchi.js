@@ -74,6 +74,21 @@ class Tamagotchi {
     this.full -= 3;
     console.log(`My energy is ${this.energy} and my full is ${this.full} `);
   }
+
+  timePasses() {
+    if (this.sick) {
+      this.mood -= 3;
+      this.full -= 2;
+      this.energy -= 2;
+    } else {
+      this.mood -= 2;
+      this.full -= 1;
+      this.energy -= 1;
+    }
+    console.log(
+      `My energy is ${this.energy}, my full is ${this.full}, and my mood is ${this.mood}`
+    );
+  }
 }
 
 let myPet = new Tamagotchi("Mochi");
@@ -114,7 +129,12 @@ myPet.status(); // I am not sick
 // myPet.play(); // I played
 
 // --------- Testing Sleep Method ---------
-myPet.sleep();
+// myPet.sleep();
+
+// --------- Testing Time Method ---------
+myPet.timePasses();
+myPet.sick = true;
+myPet.timePasses();
 
 // Do not edit below this line
 module.exports = Tamagotchi;
