@@ -68,6 +68,12 @@ class Tamagotchi {
       console.log("I played!");
     }
   }
+
+  sleep() {
+    this.energy += 4;
+    this.full -= 3;
+    console.log(`My energy is ${this.energy} and my full is ${this.full} `);
+  }
 }
 
 let myPet = new Tamagotchi("Mochi");
@@ -106,6 +112,9 @@ myPet.status(); // I am not sick
 
 // myPet.energy = 6;
 // myPet.play(); // I played
+
+// --------- Testing Sleep Method ---------
+myPet.sleep();
 
 // Do not edit below this line
 module.exports = Tamagotchi;
