@@ -33,14 +33,27 @@ class Tamagotchi {
       }\n${this.sick ? "I am sick" : "I am not sick"}`
     );
   }
+
+  eat() {
+    this.full += 2;
+    this.full > 10 ? (this.sick = true) : "";
+  }
 }
 
-const myPet = new Tamagotchi("Mochi");
+let myPet = new Tamagotchi("Mochi");
 myPet.greet(); // Hello, I'm Mochi
 myPet.status(); // I am not sick
 
-const sickPet = new Tamagotchi("Mocha", 9, 8, 6, true, false);
-sickPet.status(); // I am sick
+myPet.eat(); // full = 10
+console.log(myPet.full);
+myPet.status(); // not sick
+
+myPet.eat(); // full = 12
+console.log(myPet.full);
+myPet.status(); // sick
+
+// let sickPet = new Tamagotchi("Mocha", 9, 8, 6, true, false);
+// sickPet.status(); // I am sick
 
 // Do not edit below this line
 module.exports = Tamagotchi;
