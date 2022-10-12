@@ -50,11 +50,17 @@ class Tamagotchi {
             this.full -= 1;
         }
     }
+    sleep() {
+        this.energy += 4;
+        this.full -= 3;
+    }
 }
 const captain = new Tamagotchi("Gozarutchi")
 captain.greet()
 captain.status()
 captain.eat()
 captain.medicate()
+captain.play()
+captain.sleep()
 // Do not edit below this line
 module.exports = Tamagotchi;
