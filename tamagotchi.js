@@ -70,6 +70,18 @@ class Tamagotchi {
     this.energy += 4;
     this.full -= 3;
   }
+
+  timePasses() {
+    if (this.sick) {
+      this.mood -= 3;
+      this.energy -= 2;
+      this.full -= 2;
+      return;
+    }
+    this.mood -= 2;
+    this.energy--;
+    this.full--;
+  }
 }
 
 const Tamatchi = new Tamagotchi("Tamatchi");
@@ -79,5 +91,6 @@ Tamatchi.eat();
 Tamatchi.medicate();
 Tamatchi.play();
 Tamatchi.sleep();
+Tamatchi.timePasses();
 
 module.exports = Tamagotchi;
