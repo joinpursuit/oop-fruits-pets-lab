@@ -1,10 +1,5 @@
 // Create class below
 
-// greet: Tamagotchi console logs Hello, I'm <name>!
-// status: Tamogotchi console logs energy, full, mood, and sick values (see below for sample message)
-// eat: increases fullness by two, decreases energy by 1,
-// if eat method makes fullness more than 10, tamagotchi becomes sick (sick = true)
-
 class Tamagotchi {
   constructor(
     name,
