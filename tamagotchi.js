@@ -82,6 +82,12 @@ class Tamagotchi {
     this.energy--;
     this.full--;
   }
+  badGuardian() {
+    if (this.energy <= 0) this.rehomed = true;
+    if (this.mood <= 0) this.rehomed = true;
+    if (this.full <= 0) this.rehomed = true;
+    console.log(`${this.name} has been rehomed.`);
+  }
 }
 
 const Tamatchi = new Tamagotchi("Tamatchi");
@@ -92,5 +98,6 @@ Tamatchi.medicate();
 Tamatchi.play();
 Tamatchi.sleep();
 Tamatchi.timePasses();
+Tamatchi.badGuardian();
 
 module.exports = Tamagotchi;
