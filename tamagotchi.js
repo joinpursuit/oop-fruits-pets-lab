@@ -54,6 +54,17 @@ class Tamagotchi {
         this.energy += 4;
         this.full -= 3;
     }
+    timePasses() {
+        if(this.sick) {
+            this.mood -= 3;
+            this.full -= 2;
+            this.energy -= 2;
+        } else {
+            this.mood -= 2;
+            this.full -= 1;
+            this.energy -= 1;
+        }
+    }
 }
 const captain = new Tamagotchi("Gozarutchi")
 captain.greet()
@@ -62,5 +73,7 @@ captain.eat()
 captain.medicate()
 captain.play()
 captain.sleep()
+captain.timePasses()
+
 // Do not edit below this line
 module.exports = Tamagotchi;
