@@ -65,6 +65,14 @@ class Tamagotchi {
             this.energy -= 1;
         }
     }
+    badGuardian() {
+        if (this.energy <= 0 || this.mood <= 0 || this.full <= 0) {
+            console.log(`${this.name} has been rehomed`)
+            this.rehomed = true;
+        } else {
+            this.rehomed;
+        }
+    }
 }
 const captain = new Tamagotchi("Gozarutchi")
 captain.greet()
@@ -74,6 +82,7 @@ captain.medicate()
 captain.play()
 captain.sleep()
 captain.timePasses()
+captain.badGuardian()
 
 // Do not edit below this line
 module.exports = Tamagotchi;
