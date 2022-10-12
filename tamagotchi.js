@@ -45,6 +45,27 @@ class Tamagotchi {
     console.log("I refuse to take my medicine.");
     this.energy--;
   }
+
+  play() {
+    if (this.sick) {
+      this.mood--;
+      this.energy--;
+      return;
+    }
+    if (this.mood > 9) {
+      this.energy -= 2;
+      this.full--;
+      return;
+    }
+    if (this.energy <= 3) {
+      console.log("I am too tired to play.");
+      this.energy--;
+      return;
+    }
+    this.mood += 2;
+    this.energy--;
+    this.full--;
+  }
 }
 
 const Tamatchi = new Tamagotchi("Tamatchi");
@@ -52,5 +73,6 @@ Tamatchi.greet();
 Tamatchi.status();
 Tamatchi.eat();
 Tamatchi.medicate();
+Tamatchi.play();
 
 module.exports = Tamagotchi;
