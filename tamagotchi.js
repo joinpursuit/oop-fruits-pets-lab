@@ -28,10 +28,17 @@ class Tamagotchi {
       }\n********************`
     );
   }
+
+  eat() {
+    this.full += 2;
+    this.energy--;
+    if (this.full > 10) this.sick = true;
+  }
 }
 
 const Tamatchi = new Tamagotchi("Tamatchi");
 Tamatchi.greet();
 Tamatchi.status();
+Tamatchi.eat();
 
 module.exports = Tamagotchi;
