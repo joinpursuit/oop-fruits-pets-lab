@@ -89,6 +89,13 @@ class Tamagotchi {
       `My energy is ${this.energy}, my full is ${this.full}, and my mood is ${this.mood}`
     );
   }
+
+  badGuardian() {
+    if (this.energy <= 0 || this.mood <= 0 || this.full <= 0) {
+      this.rehomed = true;
+      console.log("This tamagotchi has been rehomed");
+    }
+  }
 }
 
 let myPet = new Tamagotchi("Mochi");
@@ -132,9 +139,25 @@ myPet.status(); // I am not sick
 // myPet.sleep();
 
 // --------- Testing Time Method ---------
-myPet.timePasses();
-myPet.sick = true;
-myPet.timePasses();
+// myPet.timePasses();
+// myPet.sick = true;
+// myPet.timePasses();
+
+// --------- Testing Bad Guardian Method ---------
+// myPet.energy = 0;
+// myPet.badGuardian();
+// myPet.energy = 7;
+// myPet.rehomed = false;
+
+// myPet.mood = 0;
+// myPet.badGuardian();
+// myPet.mood = 7;
+// myPet.rehomed = false;
+
+// myPet.full = 0;
+// myPet.badGuardian();
+// myPet.full = 7;
+// myPet.rehomed = false;
 
 // Do not edit below this line
 module.exports = Tamagotchi;
