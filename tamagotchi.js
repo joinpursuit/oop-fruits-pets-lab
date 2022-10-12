@@ -1,4 +1,4 @@
 // Create class below
 
 // Do not edit below this line
-module.exports = Tamagotchi;
+// module.exports = Tamagotchi;
