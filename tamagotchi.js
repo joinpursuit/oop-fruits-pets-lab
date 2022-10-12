@@ -38,22 +38,74 @@ class Tamagotchi {
     this.full += 2;
     this.full > 10 ? (this.sick = true) : "";
   }
+
+  medicate() {
+    if (this.sick) {
+      this.full = 9;
+      this.energy -= 3;
+    } else {
+      console.log("I don't need medicine!");
+      this.energy -= 1;
+    }
+  }
+
+  play() {
+    if (this.sick) {
+      this.mood -= 1;
+      this.energy -= 1;
+      console.log("I'm too sick to play!");
+    } else if (this.mood >= 9) {
+      this.energy -= 2;
+      this.full -= 1;
+      console.log("My mood is too high to play!");
+    } else if (this.energy <= 3) {
+      this.energy -= 1;
+      console.log("I am too tired to play!");
+    } else {
+      this.mood += 2;
+      this.energy -= 1;
+      this.full -= 1;
+      console.log("I played!");
+    }
+  }
 }
 
 let myPet = new Tamagotchi("Mochi");
 myPet.greet(); // Hello, I'm Mochi
 myPet.status(); // I am not sick
 
-myPet.eat(); // full = 10
-console.log(myPet.full);
-myPet.status(); // not sick
+// myPet.eat(); // full = 10
+// console.log(myPet.full);
+// myPet.status(); // not sick
 
-myPet.eat(); // full = 12
-console.log(myPet.full);
-myPet.status(); // sick
+// --------- Testing Eat Method ---------
 
-// let sickPet = new Tamagotchi("Mocha", 9, 8, 6, true, false);
-// sickPet.status(); // I am sick
+// myPet.eat(); // full = 12
+// console.log(myPet.full);
+// myPet.status(); // sick
+
+// --------- Testting Medicate Method ---------
+
+// myPet.medicate(); // will medicate
+// myPet.status(); // full = 9, energy decreased
+// myPet.sick = false;
+// myPet.medicate(); // won't medicate
+
+// --------- Testing Play Method ---------
+
+// myPet.sick = true;
+// myPet.play(); // too sick to play
+
+// myPet.sick = false;
+// myPet.mood = 9;
+// myPet.play(); // mood too high to play
+
+// myPet.mood = 7;
+// myPet.energy = 3;
+// myPet.play(); // energy too low to play
+
+// myPet.energy = 6;
+// myPet.play(); // I played
 
 // Do not edit below this line
 module.exports = Tamagotchi;
