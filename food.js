@@ -18,6 +18,11 @@ class Food {
         : `There are ${this.daysToSpoil} days left before ${this.name} spoils.`
     );
   }
+
+  aDayPasses() {
+    this.daysToSpoil--;
+    console.log(this.isFresh());
+  }
 }
 
 module.exports = Food;
