@@ -25,10 +25,22 @@ class Tamagotchi {
   greet() {
     console.log(`Hello, I'm ${this.name}!`);
   }
+
+  status() {
+    console.log(
+      `My Mood is: ${this.mood}\nI am this full: ${this.full}\nMy Energy is: ${
+        this.energy
+      }\n${this.sick ? "I am sick" : "I am not sick"}`
+    );
+  }
 }
 
 const myPet = new Tamagotchi("Mochi");
-myPet.greet();
+myPet.greet(); // Hello, I'm Mochi
+myPet.status(); // I am not sick
+
+const sickPet = new Tamagotchi("Mocha", 9, 8, 6, true, false);
+sickPet.status(); // I am sick
 
 // Do not edit below this line
 module.exports = Tamagotchi;
