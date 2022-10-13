@@ -15,6 +15,10 @@ class Tamagotchi {
       this.sick = sick
       this.rehomed = rehomed
     }
+    greet() {
+      return `Hello, I'm ${this.name}`
+    }
+   
       }
 // Do not edit below this line
 module.exports = Tamagotchi;
