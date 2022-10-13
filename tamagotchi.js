@@ -18,7 +18,9 @@ class Tamagotchi {
     greet() {
       return `Hello, I'm ${this.name}`
     }
-   
+    status() {
+      return this.energy, this.full, this.sick
+    }
       }
 // Do not edit below this line
 module.exports = Tamagotchi;
