@@ -20,7 +20,8 @@ class Food {
   }
 
   aDayPasses() {
-    (this.isFresh) ? this.daysToSpoil-1 : this.daysToSpoil;
+    this.daysToSpoil--;
+    this.isFresh();
   }
 }
 
