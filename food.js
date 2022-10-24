@@ -7,7 +7,7 @@ class Food {
   }
 
   prepare() {
-    console.log(`food ${this.name} is being prepared`);
+    console.log(`${this.name} is being prepared`);
   }
 
   isFresh() {
@@ -17,7 +17,7 @@ class Food {
     :
     console.log(`${this.name} has spoiled`)
   }
-  
+
   aDayPasses() {
     (this.isFresh) ? this.daysToSpoil-1 : this.daysToSpoil;
   }
