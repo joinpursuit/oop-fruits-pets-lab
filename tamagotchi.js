@@ -18,7 +18,7 @@ class Tamagotchi {
 
   // Tamagotchi has greet method [ok]
   greet() {
-    console.log(`Hello ${this.name}!`);
+    console.log(`Hello, I'm ${this.name}!`);
   }
 
   
