@@ -93,9 +93,9 @@ class Tamagotchi {
 
   // Tamagotchi has timePasses method [ok]
   // If tamagotchi is not sick, timePasses, mood decreases by 2, 
-  // fullness and energy decrease by
+  // fullness and energy decrease by 1 [ok]
   // If tamagotchi is sick, timePasses, mood decreases by 3, 
-  // fullness and energy decrease by 2
+  // fullness and energy decrease by 2 [ok]
   timePasses() {
     if (this.sick) {
       this.mood = this.mood - 3;
@@ -105,6 +105,16 @@ class Tamagotchi {
       this.mood = this.mood - 2;
       this.full = this.full - 1;
       this.energy = this.energy - 1;  
+    }
+  }
+
+  // Tamagotchi has badGuardian method [ok]
+  // If energy is less than or equal to 0, rehomed is true [ok]
+  // If mood is less than or equal to 0, rehomed is true [ok]
+  // If full is less than or equal to 0, rehomed is true [ok]
+  badGuardian() {
+    if (this.energy <= 0 || this.mood <= 0 || this.full <= 0) {
+      this.rehomed = true;
     }
   }
 
