@@ -21,7 +21,7 @@ class Tamagotchi {
     console.log(`Hello, I'm ${this.name}!`);
   }
 
-  // Tamagotchi has status method
+  // Tamagotchi has status method [ok]
   status() {
     console.log(`
     Here is my Status
@@ -30,6 +30,20 @@ class Tamagotchi {
     Energy: ${this.energy}
     `);
   }
+
+  // Tamagotchi has eat method [ok]
+  // eat method increases fullness by 2 [ok]
+  // eat method decreases energy by 1 [ok]
+  // if eat method makes fullness more than 10, tamagotchi becomes sick [ok]
+  eat() {
+    this.full = this.full + 2;
+    this.energy = this.energy - 1;
+    //
+    if (this.full > 10) {
+      this.sick = true;
+    }
+  }
+
 }
 
 // Do not edit below this line
