@@ -91,6 +91,23 @@ class Tamagotchi {
     this.full = this.full - 3;
   }
 
+  // Tamagotchi has timePasses method [ok]
+  // If tamagotchi is not sick, timePasses, mood decreases by 2, 
+  // fullness and energy decrease by
+  // If tamagotchi is sick, timePasses, mood decreases by 3, 
+  // fullness and energy decrease by 2
+  timePasses() {
+    if (this.sick) {
+      this.mood = this.mood - 3;
+      this.full = this.full - 2;
+      this.energy = this.energy - 2;
+    } else {
+      this.mood = this.mood - 2;
+      this.full = this.full - 1;
+      this.energy = this.energy - 1;  
+    }
+  }
+
 }
 
 // Do not edit below this line
