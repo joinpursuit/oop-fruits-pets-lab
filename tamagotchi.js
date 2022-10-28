@@ -44,6 +44,23 @@ class Tamagotchi {
     }
   }
 
+  // Tamagotchi has medicate method [ok]
+  // Tamagotchi medicate heals sick tamagotchi [ok]
+  // Tamagotchi medicate if sick, then: [ok]
+  // tamagotchi sets full to 9 and decreases energy by 3 [ok]
+  medicate() {
+    // Validating sick
+    if (this.sick) {
+      this.full=9;
+      this.energy=this.energy-3;
+      // medicate heals sick tamagotchi
+      this.sick=false;
+    } else {
+      // Tamagotchi medicate for not sick tamagotchi reduces energy by 1
+      this.energy=this.energy-1;
+    }
+  }
+
 }
 
 // Do not edit below this line
