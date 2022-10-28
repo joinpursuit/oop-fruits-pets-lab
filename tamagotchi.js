@@ -21,7 +21,15 @@ class Tamagotchi {
     console.log(`Hello, I'm ${this.name}!`);
   }
 
-  
+  // Tamagotchi has status method
+  status() {
+    console.log(`
+    Here is my Status
+    Mood: ${this.mood}
+    Full: ${this.full}
+    Energy: ${this.energy}
+    `);
+  }
 }
 
 // Do not edit below this line
