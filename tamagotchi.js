@@ -55,33 +55,40 @@ class Tamagotchi {
       // medicate heals sick tamagotchi
       this.sick=false;
     } else {
-      // Tamagotchi medicate for not sick tamagotchi reduces energy by 1
+      // Tamagotchi medicate for not sick tamagotchi reduces energy by 1 [ok]
       this.energy = this.energy - 1;
     }
   }
 
-  // Tamagotchi has play method
+  // Tamagotchi has play method [ok]
   play() {
     if (this.sick) {
-      // Tamagotchi won't play if it is sick
+      // Tamagotchi won't play if it is sick [ok]
       this.mood = this.mood - 1;
       this.energy = this.energy - 1;
     }
     else if (this.mood > 9) {
-      // Tamagotchi won't play if mood is above 9
+      // Tamagotchi won't play if mood is above 9 [ok]
       this.energy = this.energy - 2;
       this.full = this.full - 1;
     }
     else if (this.energy <= 3) {
-      // Tamagotchi won't play if energy is less than or equal to 3
+      // Tamagotchi won't play if energy is less than or equal to 3 [ok]
       this.energy = this.energy - 1;
     } 
     else {
-      // Tamagotchi play increases mood by 2, reduces energy & full by 1
+      // Tamagotchi play increases mood by 2, reduces energy & full by 1 [ok]
       this.mood = this.mood + 2;
       this.energy = this.energy - 1;
       this.full = this.full - 1;
     }
+  }
+
+  // Tamagotchi has sleep method [ok]
+  // Sleep method increases energy by 4 and decreases full by 3 [ok]
+  sleep() {
+    this.energy = this.energy + 4;
+    this.full = this.full - 3;
   }
 
 }
